@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import LettersRain from "./components/LettersRain";
+import Canvas3D from "./components/Canvas3D";
+import Beer from "./components/Banner";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={"./logo.avif"} className="App-logo" alt="logo" />
       </header>
+      <div>
+          <Beer />
+          <LettersRain />
+          <Canvas3D />
+      </div>
     </div>
   );
 }

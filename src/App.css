@@ -1,21 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Konkhmer Sleokchher', cursive;
+}
+html {
+  background-color: #438486;
+}
+
 .App {
   text-align: center;
 }
-
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
+  height: 130px;
+  position: absolute;
+  top: 50px;
+  z-index: 3;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,16 +27,112 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
+canvas {
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+}
+h1 {
+  z-index: 3;
+  pointer-events: none;
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  color: #a7a269;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+/* animations */
+#c {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+#canvas, #canvas2 {
+  display: block;
+  position:absolute;
+  top:0;
+  left:0;
+}
+#scene {
+  z-index: 10;
+}
+.animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #437985;
+  color: #242c18;
+}
+.animation-container span {
+  font-weight: bold;
+  position: absolute;
+  color: #242c18;
+  display: block;
+  font-size: 16px;
+  /*font-family: 'Arial Black', serif;
+  */
+  font-family: 'Konkhmer Sleokchher', cursive;
+  text-shadow: none;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+  z-index: 1;
+  opacity: 0;
+  bottom: 0;
+  will-change: transform, opacity;
+  animation-timing-function: ease-out;
+  animation-name: move;
+}
+@keyframes move {
+  0% {
+    color: #1b3a42;
+    opacity: 0;
+    bottom: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  15% {
+    color: #1b3a42;
+    opacity: 1;
+  }
+  50% {
+    color: #1b3a42;
+    opacity: 1;
+  }
+  75% {
+    color: #1b3a42;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: none;
+    color: #1b3a42;
+  }
+}
+.banner {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 50;
+  width: 300px;
+}
+@media (max-width: 600px) {
+  .banner {
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
